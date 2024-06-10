@@ -1,0 +1,28 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">{{ speurtocht }}</p>
+    </div>
+	<div id="map-form-container">
+      	<div id="starting-point-map">
+            <div id="start-point-map-text">Jullie kunnen een beginpunt uitkiezen dat voor jullie het handigst is. De speurtocht eindigt daar dan ook.</div>
+            <img src="{{ speurtocht.start_point_map }}" alt="Kaart met mogelijke startpunten" id="start-point-map">
+            <div id="descr-start-points"><pre id="pre-start-points">{{ speurtocht.descr_start_points }}</pre></div>  
+        </div>
+        <div class="team-form">
+            <form action="{% url 'speurtochten:begin' speurtocht.title gtcode %}" method="POST">
+                {% csrf_token %}
+                <label class="labels" for="starting-point">Waar willen jullie beginnen?</label><br>
+                <input type="number" id="starting-point" name="starting-point" class="input-text"><br>
+                {% if error_message %}
+                    <div id="error-message">{{ error_message }}</div><br>
+                {% endif %}    
+                <label class="labels" for="team-name">Teamnaam:</label><br>
+                <input type="text" id="team-name" name="team-name" class="input-text"><br>
+                <input class="submit-buttons" type="submit" value="Submit">
+            </form><br>
+        </div>
+	</div>  
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %} 
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">Stadsspeurtochten</p>
+    </div>
+    <div class="headers">
+        <h3>Contact</h3>
+    </div>
+    <div class="text-block">
+        Wij zijn bereikbaar per email, whatsapp, telegram en telefoon.<br><br>
+        Email: info@stadsspeurtochten.nl<br><br>
+        Telefoon/whatsapp: 06 47068537<br><br>
+		Telegram: @Stadsspeurtochten
+    </div>
+    
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+        </ul>
+    </div>
+{% endblock %}

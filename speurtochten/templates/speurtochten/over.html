@@ -1,0 +1,47 @@
+
+{% extends "speurtochten/layout.html" %} 
+{% load static %} 
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">Stadsspeurtochten</p>
+    </div>
+    <div class="headers">
+        <h3>Over Stadsspeurtochten</h3>
+    </div>
+    <div class="text-block">
+      	<div id="over-text">
+            Het idee voor Stadsspeurtochten is ontstaan tijdens de lockdown in de winter van 2021-2022.
+            Alles was dicht en er mocht weinig, maar rondzwerven over straat was gelukkig nog wel een optie.
+          	Tijdens deze omdwalingen kwam ik erachter dat er nog zoveel te verkennen is op straat, zelfs in mijn eigen buurt. 
+            Ik ontdekte vanalles: gekke gevelstenen, verborgen pleintjes en tuinen, mooie bruggen en veel interessante verhalen. 
+            Ik wilde dit op een speelse en actieve manier kunnen voortzetten en met andere mensen kunnen delen en zo ontstond het plan om 
+            zelf speurtochten te maken. <br><br>
+            <div id="make-it-bold">Hoe werkt het?</div>
+            Alle speurtochten zijn geheel digitaal en kunnen het beste worden gespeeld op een telefoon met een internetverbinding. 
+            Wanneer je een speurtocht bestelt ontvang je na de betaling een code waarmee je die speurtocht kan beginnen. 
+            De code is geldig voor één speurtocht, maar daar mag je zo lang over doen als je wil (maar wel maximaal een jaar). 
+          	De opzet van de stadsspeurtochten is simpel; elke tocht heeft een uitgezette route, zoals een stadswandeling, en je krijgt 
+            onderweg regelmatig een vraag waarvan je het antwoord ergens om je heen kan vinden. Na het beantwoorden van de vraag volgt er 
+            nog een beknopt verhaal met achtergrondinformatie over de plek waar je je op dat moment bevindt. 
+            Mocht je onderweg ergens langer willen blijven of meerdere dagen over de speurtocht willen doen, dan is dat geen probleem. 
+            Met je code kun je altijd verder waar je gebleven was.
+      	</div><br><br>
+      	<div id="over-gegevens">
+          	Handelsnaam: Stadsspeurtochten <br>
+          	KvK-nummer: 86196898 <br>
+          	Btw-identificatienummer: NL004211160B55 <br>
+          	Adres: Laan van de Marel 623 <br>
+          	7823BS Emmen <br>
+            <a href="{% url 'speurtochten:algemenevoorwaarden' %}">Algemene voorwaarden</a><br>
+      	</div>  
+    </div>
+
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>
+{% endblock %}  

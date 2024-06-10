@@ -1,0 +1,40 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">{{ speurtocht }}</p>
+    </div>
+    
+    <div class="speurtocht-details">
+        <div id="text-speurtocht">
+            <p>{{ speurtocht.description }}</p>
+            <div>Aantal vragen: {{ speurtocht.no_of_questions }}</div>
+            <div>Totale afstand: {{ speurtocht.total_distance }} km</div>
+          	<div>Prijs: €{{ speurtocht.price }}</div><br><br>
+        </div>
+        <div>
+            <a href="{% url 'speurtochten:bestellen' speurtocht.title %}" class="button-container">Bestellen</a>
+        </div><br><br>
+        <div class="speurtocht-image">
+            <img src="{{ speurtocht.img_2 }}" alt="Afbeelding van de stad {{ speurtocht.title }}" id="img-2">
+        </div>
+        <div id="text-continue">
+            Al aan deze speurtocht begonnen, maar nog niet afgemaakt? 
+            Klik hieronder op Verdergaan, vul vervolgens de code uit de e-mail in en je kan de speurtocht vervolgen.
+        </div><br>
+        <div>
+            <a class="button-container" href="{% url 'speurtochten:verdergaan' speurtocht.title %}">Verdergaan</a>
+        </div>
+    </div>
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>
+       
+
+{% endblock %}

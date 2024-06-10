@@ -1,0 +1,37 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+{% block body %}
+    <div class="content-container">   
+        <div class="question-title">
+            <h2 class="question-question">{{ question.title }}</h2>
+        </div>
+        <div class="question-description">
+            <p>{{ question.description }}</p>
+        </div>
+        <form action="{% url 'speurtochten:question' name gtcode question.number pk %}" method="POST" class="answers-form">
+            {% csrf_token %}
+            <div class="answers-box">
+                <div class="answer-container">
+                    <input type="radio" id="q1" name="given-answer" class="possible-answer" value="1" required>
+                    <label for="q1" class="radio-label">1. {{ question.possible_answer_1 }}</label>
+                </div>
+                <div class="answer-container">
+                    <input type="radio" id="q2" name="given-answer" class="possible-answer" value="2">
+                    <label for="q2" class="radio-label">2. {{ question.possible_answer_2 }}</label>
+                </div>
+                <div class="answer-container">
+                    <input type="radio" id="q3" name="given-answer" class="possible-answer" value="3">
+                    <label for="q3" class="radio-label">3. {{ question.possible_answer_3 }}</label>
+                </div>
+                <div class="answer-container">
+                    <input type="radio" id="q4" name="given-answer" class="possible-answer" value="4">
+                    <label for="q4" class="radio-label">4. {{ question.possible_answer_4 }}</label>
+                </div>
+            </div>
+            <div class="submit-button">
+                <input type="submit" value="Check" id="check">
+            </div>
+        </form>
+    </div>      
+{% endblock %}

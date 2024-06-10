@@ -1,0 +1,39 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %} 
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">Stadsspeurtochten</p>
+    </div>
+    <div class="headers">
+        <h3>Bestellen</h3><br>
+      	<h2>Deze website is nog onder constructie, nog even geduld</h2>
+    </div>
+    <div id="uitleg-bestellen">
+        <b>Hoe werkt het?</b><br>
+        De speurtochten zijn volledig digitaal en als je er een bestelt kan je er dus snel aan beginnen.
+        Vul hieronder je e-mailadres in (die wordt voor niks anders gebruikt dan om de code naartoe te sturen) en accepteer de algemene voorwaarden.
+        Vervolgens wordt je doorverwezen naar ideal om te kunnen betalen. 
+        Na de betaling krijg je de code en kun je uitkiezen waar je de speurtocht wil beginnnen. 
+        Dan hoef je slechts nog naar die locatie te gaan en te speuren.
+    </div>
+    <div class="order-form-container">
+        <form action="{% url 'speurtochten:bestellen' speurtocht.title %}" id="order-form" method="POST">
+            {% csrf_token %}
+            <label for="user-mail">E-mailadres:</label><br>
+            <input type="email" id="user-mail" name="user-mail" required><br>
+            <input type="checkbox" id="algemene-woorwaarden" name="algemene-voorwaarden" value="AlgemeneVoorwaarden" required> 
+            <label for="algemene-voorwaarden">Ik ga akkoord met de <a href="{% url 'speurtochten:algemenevoorwaarden' %}">algemene voorwaarden</a></label><br>
+            <input class="submit-buttons" type="submit" value="Betalen">
+        </form>
+    </div>
+
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>
+{% endblock %}    

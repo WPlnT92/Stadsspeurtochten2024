@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Stadsspeurtochten{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <meta name="description" content="Ontdek een stad met een van onze speurtochten. Maak een stadswandeling en zoek onderweg naar de antwoorden op de vragen van de speurtocht.">
+        <meta name="keywords" content="speurtocht, stadswandeling, wandeling, gids, rondleiding, tour, stedentrip, Amsterdam, Groningen, Maastricht">
+        <meta name="author" content="Stadsspeurtochten">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="block-body">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

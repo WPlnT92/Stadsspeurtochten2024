@@ -1,0 +1,28 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">Alle speurtochten</p>
+    </div>
+    
+    <div class="overzicht-block">
+        <ul class="list-speurtochten">
+        {% for speurtocht in alle %}
+            <li class="speurtocht-item">
+                <a class="speurtocht-link" href="{{ speurtocht.get_absolute_url }}">
+                    <div class="speurtocht-naam">{{ speurtocht }}</div>
+                    <img src="{{ speurtocht.img_1 }}" alt="Afbeelding van de stad {{ speurtocht.name }}" class="image-tocht">
+                </a>
+            </li>
+        {% endfor %}    
+        </ul>
+    </div>
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>
+{% endblock %}  

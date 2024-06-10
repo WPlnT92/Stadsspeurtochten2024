@@ -1,0 +1,42 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %} 
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">Stadsspeurtochten</p>
+    </div>
+    <div class="motto">
+        <h4 id="motto-text">Wandel, speur en ontdek de mooiste plekken van de stad</h4>
+    </div>
+    <div class="intro-words">
+        Met een stadsspeurtocht leer je de stad kennen door een wandeling te maken langs het mooiste dat de stad te bieden heeft.
+        Je komt langs de bekende highlights, maar ook langs verborgen oases van rust en plekken met een verrassende geschiedenis.
+        Onderweg krijg je vragen over de gebouwen, pleinen, planten, bruggen, hofjes en alles wat er verder te zien is. 
+        De antwoorden zijn allemaal op straat te vinden. Ga op een ontdekkingstocht waarbij je op een andere manier naar de stad leert kijken.
+    </div>
+    <button type="button" class="overzicht-link">
+        <a class="link-naar-overzicht" href="{% url 'speurtochten:overzicht'%}">Bekijk alle speurtochten</a>
+    </button><br>
+    <div class="nieuwe-tochten">
+        <div class="nieuwe-tochten-text">
+            Nieuwste speurtochten:
+        </div>
+        <ul class="list-speurtochten">
+        {% for speurtocht in newest_items %}
+            <li class="speurtocht-item">
+                <a class="speurtocht-link" href="{{ speurtocht.get_absolute_url }}">
+                    <div class="speurtocht-naam">{{ speurtocht }}</div>
+                    <img src="{{ speurtocht.img_1 }}" alt="afbeelding" class="image-tocht">
+                </a>
+            </li>   
+        {% endfor %}     
+        </ul>
+    </div>
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>
+{% endblock %}

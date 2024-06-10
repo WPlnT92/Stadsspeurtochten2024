@@ -1,0 +1,30 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+{% block body %}
+    <div class="page-title">
+        <p class="title-text">{{ title }}</p>
+    </div>
+    <div class="continue-block">
+        {% if error_message %}
+            <div class="code_error">{{ error_message }}</div>
+        {% endif %}    
+        <form action="{% url 'speurtochten:verdergaan' title %}" method="POST" class="continue-button">
+            {% csrf_token %}
+            <label for="code-tocht">Code: </label>
+            <input type="text" id="code-tocht" name="code-tocht" class="input-text">
+            <input type="submit" value="Submit" class="submit-buttons">
+        </form>
+    </div>
+
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>
+       
+
+{% endblock %}  

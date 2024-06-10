@@ -1,0 +1,521 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0px;
+    background-color: rgb(2, 97, 65);
+    background-image: linear-gradient(to bottom right, rgb(2, 37, 102), rgb(2, 83, 6));
+  }
+  
+  .block-body {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .page-title {
+    flex: 0 3 10%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .title-text {
+    color: rgb(255, 19, 97);
+    text-shadow: 2px 2px 3px black, 0px 0px 4px rgb(189, 8, 53);
+    font-size: xx-large;
+    margin: 16px;
+    font-weight: bold;
+  }
+  
+  /* Index */
+  .motto {
+    flex: 1 1 5%;
+    max-width: 90%;
+    text-align: center;
+  }
+  
+  #motto-text {
+    text-align: center;
+  }
+    
+  .intro-words {
+    flex: 1 1 20%;
+    width: 90%;
+    text-align: center;
+    max-width: 1000px;
+  }
+  
+  .overzicht-link {
+    flex: 1 1 10%;
+    padding: 10px;
+    margin: 20px;
+    border: 3px groove rgb(252, 144, 21);
+    border-radius: 5px;
+    background-color: rgb(214, 3, 56);
+  }
+  
+  .overzicht-link:active {
+    transform: translate(2px, 2px);
+  }
+  
+  .link-naar-overzicht {
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .nieuwe-tochten {
+    flex: 4 1 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nieuwe-tochten-text {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .list-speurtochten {
+    list-style: none;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  
+  .speurtocht-item {
+    width: 100%;
+    max-width: 400px;
+    max-height: 100%;
+    border: 6px outset rgb(233, 154, 7);
+    border-radius: 5px;
+    margin: 5%;
+    display: inline-block;
+    position: relative;
+  } 
+  
+  .speurtocht-item:active {
+    transform: translate(3px, 3px)
+  }
+  
+  .image-tocht {
+    width: 100%;
+    height: 100%;
+    max-height: 150px;
+    opacity: 0.7;
+    border-radius: 3px;
+    display: block;
+    z-index: 0;
+  }
+  
+  .image-tocht:hover {
+    opacity: 0.9;
+  }
+  
+  .speurtocht-link {
+    text-decoration: none; 
+  }
+  
+  .speurtocht-naam {
+    padding: 0px;
+    color: rgb(255, 19, 97);
+    text-shadow: 2px 2px 3px black, 0px 0px 8px white;
+    line-height: 0.9;
+    font-weight: bold;
+    font-size: 250%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    }
+  
+  .nav-menu-block {
+    flex: 0 1 5%;
+    width: 100%;
+    background-color: rgb(13, 27, 87);
+    display: flex;
+  }
+  
+   .nav-menu {
+     height: 100%;
+     width: 100%;
+     align-self: flex-end;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: flex-end;
+     padding: 0px;
+     font-weight: bold;
+   }
+  
+  
+  /* Overzicht */
+  .overzicht-block {
+   flex: 4 1 85%;
+   width: 100%;
+   padding: 0px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+  
+  /* Speurtocht */
+  .speurtocht-details {
+    flex: 4 1 85%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 15px 0px;
+  }
+  
+  #text-speurtocht {
+    flex: 0 1 10%;
+  }
+  
+  #text-continue {
+    flex: 0 1 10%;
+    margin: 10px 0px 10px 0px;
+  }
+  
+  .button-container {
+    flex: 0 0 15%;
+    font-weight: bold; 
+    font-size: large;
+    padding: 10px;
+    text-decoration: none;
+    border: 3px groove rgb(252, 144, 21);
+    border-radius: 5px;
+    background-color: rgb(214, 3, 56);
+  }
+  
+  .speurtocht-image {
+    flex: 0 2 35%;
+    margin: 0px 5px 10px 0px;
+    width: 100%;
+  }
+  
+  #img-2 {
+    border-radius: 5px;
+    max-width: 90%;
+  }
+  
+  /* Bestellen */
+  .headers {
+    flex: 1 1 5%;
+    width: 100%;
+    padding: 0% 3%;
+  }
+  
+  #uitleg-bestellen {
+    flex: 1 1 20%;
+    margin: 3%;
+  }
+  
+  .order-form-container {
+    flex: 1 1 30%;
+    align-self: flex-start;
+    margin: 3%;
+  }
+  
+  #user-mail {
+    color: black;
+    margin: 0px 0px 5px 0px;
+  }
+  
+  
+  /* Continue */
+  .continue-block {
+    flex: 4 1 85%;
+  }
+  
+  .code-error {
+    margin: 10px;
+  }
+  
+  .continue-button {
+    margin: 20px;
+  }
+  
+  .input-text {
+    color: black;
+    margin: 5px 0px;
+  }
+  
+  .submit-buttons {
+    font-size: large;
+    text-decoration: none;
+    border: 3px groove rgb(252, 144, 21);
+    border-radius: 5px;
+    background-color: rgb(214, 3, 56);
+    margin: 5px 0px;
+  }
+  
+  .submit-buttons:active {
+    transform: translate(2px, 2px);
+  }
+  
+  /* Begin */
+  #map-form-container {
+    flex: 1 1 90%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #starting-point-map {
+    flex: 1 1 60%;
+    max-width: 95%;
+    text-align: center;
+  }
+  
+  #start-point-map-text {
+    max-width: 400px;
+    margin: 5px 10px;
+  }
+  
+  #start-point-map {
+    max-width: 95%;
+    max-height: 400px;
+    margin: 5px 10px;
+  }
+  
+  #descr-start-points {
+    max-width: 400px;
+    margin: 0px 10px;
+    text-align: left;
+  }
+  
+  #pre-start-points {
+    margin: 0px;
+  }
+  
+  .team-form {
+    flex: 1 1 40%;
+    max-width: 400px;
+    align-self: flex-start;
+    margin: 20px 15px;
+  }
+  
+  .labels {
+    padding: 10px 0px;
+    font-weight: bold;
+  }
+  
+  .input-text {
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
+  
+  #error-message {
+   color: red;
+  }
+  
+  /* Map */
+  .background-red {
+    flex: 1 1 100%;
+    width: 100%;
+    background-color: rgb(2, 97, 65);
+    background-image: linear-gradient(to bottom right, rgb(94, 3, 3), rgb(49, 1, 1));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }  
+  
+  #map-container {
+    flex: 0 0 100%;
+    max-width: 500px;
+    padding: 10px 0px;
+  }
+  
+  .question-title-map {
+    flex: 1 1 10%;
+    font-size: x-large;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+  }
+  
+  .address-container {
+    flex: 1 1 10%;
+  }
+  
+  #loc-map {
+    flex: 1 1 60%;
+    padding: 10px 0px;
+  }
+  
+  .next-button-area {
+    flex: 1 1 10%;
+  }   
+      
+  /* Question */
+  .content-container {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 4%;
+    background-color: rgb(2, 97, 65);
+    background-image: linear-gradient(to bottom right, rgb(94, 3, 3), rgb(49, 1, 1));
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .question-title {
+    flex: 1 1 10%;
+  }
+  
+  .question-question {
+    text-shadow: 2px 2px 3px black, 0px 0px 4px rgb(189, 8, 53);
+  }
+  
+  .question-description {
+    flex: 1 1 15%;
+  }
+  
+  .answers-form {
+    flex: 2 2 75%;
+  }
+  
+  .answers-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .submit-button {
+    padding: 10px 0px;
+    text-align: right;
+  }
+  
+  #check {
+    background-color: rgb(3, 162, 211);
+    font-size: large;
+    width: 25%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  #check:active {
+    transform: translate(2px, 2px);
+    background-color: rgb(48, 47, 145);
+  }
+  
+  .answer-container {
+    flex: 0 0 25%;
+    border: 3px groove rgb(53, 42, 42);
+    border-radius: 5px;
+    background-color: rgb(117, 5, 5);
+    margin: 1px 0px;
+  }
+  
+  .radio-label {
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .possible-answer {
+    display: none;
+  }
+  
+  input:checked + label {
+    background-color: rgb(56, 56, 97);
+  }
+  
+  /* Answer */
+  .answer-correct {
+    flex: 1 1 10%;
+  }
+  
+  .answer-incorrect {
+    flex: 1 1 10%;
+  }
+  
+  .correct-answer {
+    flex: 1 1 10%;
+  }
+  
+  .extra-info {
+    flex: 1 1 40%;
+  }
+  
+  .next-button {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: black;
+    float: right;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  /* Finish */
+  #finish-container {
+    flex: 2 0 80%;
+    width: 100%;
+    padding: 3%;
+    background-color: rgb(2, 97, 65);
+    background-image: linear-gradient(to bottom right, rgb(94, 3, 3), rgb(49, 1, 1));
+    display: flex;
+    flex-direction: column;
+  }
+  
+  table, th, td {
+    border: 1px solid lightgrey;
+    border-spacing: 0px;
+  }
+  
+  th, td {
+    padding: 2px 4px;
+  }
+  
+  .correct-answer-finish {
+    background-color: green;
+  }
+  
+  .wrong-answer {
+    color: pink;
+  }
+  
+  /* Over */
+  .text-block {
+    flex: 2 2 80%;
+    width: 100%;
+    padding: 0% 3% 3% 3%;
+  }
+  
+  #make-it-bold {
+    font-weight: bold;
+  }
+  
+  /*Algemene voorwaarden */
+  .text-block-voorwaarden {
+    flex: 2 2 70%;
+    width: 100%;
+    padding: 0% 3%;
+  }
+  
+  #algemene-voorwaarden {
+    flex: 1 1 10%;
+    margin: 3%;
+    font-weight: bold;
+  }

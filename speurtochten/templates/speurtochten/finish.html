@@ -1,0 +1,46 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+
+{% block body %}
+    <div class="content-container">
+        <div class="finish-text">
+            <h2>Einde</h2>
+            <p>Goed gedaan! Dit is het einde van de tocht. 
+                Hopelijk hebben jullie het naar je zin gehad en nieuwe plekken ontdekt.
+                Hieronder volgt nog een overzicht van de antwoorden.
+            </p>
+        </div> 
+        <div class="overview-answers">
+            <p>Jullie hebben {{ amount }} van de {{ total }} vragen goed beantwoord!</p>
+        </div>   
+        <div id="answers-table">
+            <table id="finish-table">
+              	<tr class="finish-rows">
+                  	<th>Onderwerp</th>
+                    <th>Goed/Fout</th>
+                </tr>
+              	{% for vraag in vragen %}
+              	<tr class="finish-rows">
+                    <td>{{ vraag.subject }}</td>
+                    {% if vraag.correct %}
+                    <td class="correct-answer-finish">Goed!</td>
+                    {% elif vraag.correct == False %}
+                    <td class="wrong-answer">Fout</td>
+                    {% else %}
+                    <td>Niet beantwoord</td>
+                    {% endif %}
+              	</tr>
+              	{% endfor %}
+            </table>
+        </div>
+    </div>    
+    <div class="nav-menu-block">
+        <ul class="nav-menu">
+            <a class="nav-link" href="{% url 'speurtochten:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'speurtochten:overzicht' %}">Alle tochten</a>
+            <a class="nav-link" href="{% url 'speurtochten:over' %}">Over</a>
+            <a class="nav-link" href="{% url 'speurtochten:contact' %}">Contact</a>
+        </ul>
+    </div>    
+{% endblock %}

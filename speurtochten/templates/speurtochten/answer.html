@@ -1,0 +1,37 @@
+{% extends "speurtochten/layout.html" %} 
+{% load static %}
+
+
+{% block body %}
+    <div class="content-container">
+        <div class="question-title">
+            <h2 class="question-question">{{ question.title }}</h2>
+        </div>
+        {% if correct %}
+            <div class="answer-correct">
+                <p>Het antwoord is goed!</p>
+            </div>
+        {% else %}   
+            <div class="answer-incorrect">
+                <p>Helaas, dat is niet het juiste antwoord.</p>
+            </div>
+        {% endif %}    
+        <div class="correct-answer">
+            <p>Het juiste antwoord is: {{ question.correct_answer }}. {{ question.correct_answer_text }}</p>
+        </div>
+        <div class="extra-info">
+            <p>{{ question.extra_info }}</p>
+        </div>
+        <div class="next-button-area">
+            {% if finished %} 
+                <a href="{% url 'speurtochten:finish' name gtcode %}">
+                    <button type="button" class="next-button">Einde</button>
+                </a>
+            {% else %} 
+                <a href="{% url 'speurtochten:map' name gtcode num pk %}">
+                    <button type="button" class="next-button">Volgende</button>
+                </a>
+            {% endif %}
+        </div>    
+    </div>        
+{% endblock %}
